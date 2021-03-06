@@ -1,7 +1,7 @@
 #!/bin/sh
 
 wcxini=$1
-remote_directory=$2
+target_root_directory=$2
 
 parser=/opt/drives/hooks/ftp/filters/iniparser.py
 $parser "$wcxini" |grep -iv ^default$ |grep -iv ^connections$ |grep -iv ^general$ |while read line; do
@@ -13,7 +13,7 @@ $parser "$wcxini" |grep -iv ^default$ |grep -iv ^connections$ |grep -iv ^general
 		ftppass=`/opt/drives/hooks/ftp/filters/decode-totalcmd.py $ftprawpass`
 		passive=`$parser "$wcxini" "$line" pasvmode`
 		sharename=`echo "$line" |tr ' ' '_'`
-		subtarget=$remote_directory/ftp/$sharename/$ftphost
+		subtarget=$target_root_directory/ftp/$sharename/$ftphost
 		mkdir -p $subtarget
 		cd $subtarget
 
