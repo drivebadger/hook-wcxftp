@@ -15,6 +15,17 @@ Why this is done during the attack, and not later? Because:
 
 Clone this repository as `/opt/drivebadger/hooks/hook-wcxftp` directory on your Drive Badger persistent partition.
 
+#### Python 2.x
+
+This particular extension uses Python 2.x to decode Total Commander passwords. It is tested to work with
+Kali Linux version 2020.1b and should work without changes at least until 2020.3 - which is recent enough to support
+all new hardware at least to the end of 2021, so the solution for now is just stay with Kali Linux 2020.3.
+
+Later (2022 and so on), you will have to install any external Python 2.x distribution.
+
+More information about transition to Python 3.x can be found [here](https://www.kali.org/docs/general-use/python3-transition/),
+[here](https://www.kali.org/docs/general-use/using-eol-python-versions/) and [here](https://www.kali.org/blog/python-2-end-of-life/).
+
 ### More information
 
 - [Drive Badger main repository](https://github.com/drivebadger/drivebadger)
