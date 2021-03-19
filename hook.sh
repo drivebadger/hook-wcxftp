@@ -8,7 +8,7 @@ if [ -d "$base/Users" ]; then
 		wcxini="$base/Users/$line/AppData/Roaming/GHISLER/wcx_ftp.ini"
 		if [ -f "$wcxini" ]; then
 			logger "found $wcxini, processing possible ftp accounts"
-			/opt/drives/hooks/ftp/handle-totalcmd.sh "$wcxini" $target_root_directory
+			/opt/drivebadger/hooks/hook-wcxftp/handle-totalcmd.sh "$wcxini" $target_root_directory
 		fi
 	done
 fi

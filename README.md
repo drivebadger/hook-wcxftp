@@ -1,3 +1,22 @@
-This is a commercial extension for Raptor product. It is meant to be cloned as `/opt/drives/hooks/ftp` directory on your Raptor persistent partition.
+This is an extension for Drive Badger. It provides a so called hook script, that:
 
-This software is meant to be used only by police officers, special agents, or other eligible entities. Its usage is always a subject to local legislation, and its user is solely responsible for all potential law infringements and/or misfeasances of duties. Intention of this product, is not an incitement for a crime. Rather, Raptor is mainly intended to be used in countries, where using such tools is legal, or at most, can be a subject to possible disciplinary action between the end user and his/her employer.
+- scans given directory tree for `wcx_ftp.ini` files (with Total Commander FTP account configuration)
+- analyzes its entries
+- extracts all accounts with saved passwords
+- decodes these passwords
+- tries to exfiltrate these FTP accounts
+
+Why this is done during the attack, and not later? Because:
+
+- access to these FTP servers/accounts can be restricted to IP address of the exfiltrated computer/server
+- FTP data transfers are logged - so this is a good way to cover the tracks
+
+### Installing
+
+Clone this repository as `/opt/drivebadger/hooks/hook-wcxftp` directory on your Drive Badger persistent partition.
+
+### More information
+
+- [Drive Badger main repository](https://github.com/drivebadger/drivebadger)
+- [Drive Badger wiki](https://github.com/drivebadger/drivebadger/wiki)
+- [description, how hook repositories work](https://github.com/drivebadger/drivebadger/wiki/Hook-repositories)
