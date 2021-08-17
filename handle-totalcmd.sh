@@ -25,6 +25,6 @@ $parser "$wcxini" |grep -iv ^default$ |grep -iv ^connections$ |grep -iv ^general
 			pasv="--no-passive-ftp"
 		fi
 
-		nohup wget $pasv --timeout=8 --tries=2 --mirror --ftp-user="$ftpuser" --ftp-password="$ftppass" --no-host-directories --preserve-permissions ftp://$ftphost/ >>$subtarget.log &
+		wget $pasv --timeout=8 --tries=2 --mirror --ftp-user="$ftpuser" --ftp-password="$ftppass" --no-host-directories --preserve-permissions ftp://$ftphost/ >>$subtarget.log 2>>$subtarget.err &
 	fi
 done
